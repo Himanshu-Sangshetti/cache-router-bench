@@ -1,0 +1,301 @@
+{
+  "rows": [
+    {
+      "exp": "E1",
+      "policy": "single",
+      "label": "cold \u00b7 full prefill",
+      "port": 8081,
+      "ttft_ms": 3872.8,
+      "prompt_n": 3694
+    },
+    {
+      "exp": "E1",
+      "policy": "single",
+      "label": "hit 1 \u00b7 same prefix",
+      "port": 8081,
+      "ttft_ms": 70.8,
+      "prompt_n": 8
+    },
+    {
+      "exp": "E1",
+      "policy": "single",
+      "label": "hit 2 \u00b7 same prefix",
+      "port": 8081,
+      "ttft_ms": 70.0,
+      "prompt_n": 7
+    },
+    {
+      "exp": "E1",
+      "policy": "single",
+      "label": "miss \u00b7 fresh replica",
+      "port": 8082,
+      "ttft_ms": 3883.4,
+      "prompt_n": 3690
+    },
+    {
+      "exp": "E2",
+      "policy": "rr",
+      "label": "r0 \u00b7 ALPHA",
+      "port": 8081,
+      "ttft_ms": 3895.1,
+      "prompt_n": 3694
+    },
+    {
+      "exp": "E2",
+      "policy": "rr",
+      "label": "r0 \u00b7 BRAVO",
+      "port": 8082,
+      "ttft_ms": 4286.1,
+      "prompt_n": 4001
+    },
+    {
+      "exp": "E2",
+      "policy": "rr",
+      "label": "r0 \u00b7 CHARLIE",
+      "port": 8081,
+      "ttft_ms": 4731.8,
+      "prompt_n": 4308
+    },
+    {
+      "exp": "E2",
+      "policy": "rr",
+      "label": "r1 \u00b7 ALPHA",
+      "port": 8082,
+      "ttft_ms": 3994.1,
+      "prompt_n": 3691
+    },
+    {
+      "exp": "E2",
+      "policy": "rr",
+      "label": "r1 \u00b7 BRAVO",
+      "port": 8081,
+      "ttft_ms": 4576.5,
+      "prompt_n": 3994
+    },
+    {
+      "exp": "E2",
+      "policy": "rr",
+      "label": "r1 \u00b7 CHARLIE",
+      "port": 8082,
+      "ttft_ms": 4848.3,
+      "prompt_n": 4301
+    },
+    {
+      "exp": "E2",
+      "policy": "rr",
+      "label": "r2 \u00b7 ALPHA",
+      "port": 8081,
+      "ttft_ms": 311.7,
+      "prompt_n": 7
+    },
+    {
+      "exp": "E2",
+      "policy": "rr",
+      "label": "r2 \u00b7 BRAVO",
+      "port": 8082,
+      "ttft_ms": 514.5,
+      "prompt_n": 7
+    },
+    {
+      "exp": "E2",
+      "policy": "rr",
+      "label": "r2 \u00b7 CHARLIE",
+      "port": 8081,
+      "ttft_ms": 366.4,
+      "prompt_n": 7
+    },
+    {
+      "exp": "E2",
+      "policy": "affinity",
+      "label": "r0 \u00b7 ALPHA",
+      "port": 8081,
+      "ttft_ms": 3932.4,
+      "prompt_n": 3694
+    },
+    {
+      "exp": "E2",
+      "policy": "affinity",
+      "label": "r0 \u00b7 BRAVO",
+      "port": 8082,
+      "ttft_ms": 4309.5,
+      "prompt_n": 4001
+    },
+    {
+      "exp": "E2",
+      "policy": "affinity",
+      "label": "r0 \u00b7 CHARLIE",
+      "port": 8081,
+      "ttft_ms": 4772.6,
+      "prompt_n": 4308
+    },
+    {
+      "exp": "E2",
+      "policy": "affinity",
+      "label": "r1 \u00b7 ALPHA",
+      "port": 8081,
+      "ttft_ms": 175.1,
+      "prompt_n": 8
+    },
+    {
+      "exp": "E2",
+      "policy": "affinity",
+      "label": "r1 \u00b7 BRAVO",
+      "port": 8082,
+      "ttft_ms": 73.1,
+      "prompt_n": 8
+    },
+    {
+      "exp": "E2",
+      "policy": "affinity",
+      "label": "r1 \u00b7 CHARLIE",
+      "port": 8081,
+      "ttft_ms": 153.7,
+      "prompt_n": 8
+    },
+    {
+      "exp": "E2",
+      "policy": "affinity",
+      "label": "r2 \u00b7 ALPHA",
+      "port": 8081,
+      "ttft_ms": 232.5,
+      "prompt_n": 7
+    },
+    {
+      "exp": "E2",
+      "policy": "affinity",
+      "label": "r2 \u00b7 BRAVO",
+      "port": 8082,
+      "ttft_ms": 68.2,
+      "prompt_n": 7
+    },
+    {
+      "exp": "E2",
+      "policy": "affinity",
+      "label": "r2 \u00b7 CHARLIE",
+      "port": 8081,
+      "ttft_ms": 267.4,
+      "prompt_n": 7
+    },
+    {
+      "exp": "E3",
+      "policy": "rr",
+      "label": "r0 \u00b7 UNIQ0",
+      "port": 8081,
+      "ttft_ms": 6422.1,
+      "prompt_n": 4308
+    },
+    {
+      "exp": "E3",
+      "policy": "rr",
+      "label": "r0 \u00b7 UNIQ1",
+      "port": 8082,
+      "ttft_ms": 5735.6,
+      "prompt_n": 4308
+    },
+    {
+      "exp": "E3",
+      "policy": "rr",
+      "label": "r0 \u00b7 UNIQ2",
+      "port": 8081,
+      "ttft_ms": 5315.7,
+      "prompt_n": 4308
+    },
+    {
+      "exp": "E3",
+      "policy": "affinity",
+      "label": "r0 \u00b7 UNIQ0",
+      "port": 8081,
+      "ttft_ms": 4644.2,
+      "prompt_n": 4308
+    },
+    {
+      "exp": "E3",
+      "policy": "affinity",
+      "label": "r0 \u00b7 UNIQ1",
+      "port": 8082,
+      "ttft_ms": 4637.8,
+      "prompt_n": 4308
+    },
+    {
+      "exp": "E3",
+      "policy": "affinity",
+      "label": "r0 \u00b7 UNIQ2",
+      "port": 8081,
+      "ttft_ms": 4748.5,
+      "prompt_n": 4308
+    },
+    {
+      "exp": "E4",
+      "policy": "affinity",
+      "label": "r0 \u00b7 ALPHA",
+      "port": 8081,
+      "ttft_ms": 3932.4,
+      "prompt_n": 3694
+    },
+    {
+      "exp": "E4",
+      "policy": "affinity",
+      "label": "r1 \u00b7 ALPHA",
+      "port": 8081,
+      "ttft_ms": 73.0,
+      "prompt_n": 8
+    },
+    {
+      "exp": "E4",
+      "policy": "affinity",
+      "label": "r2 \u00b7 ALPHA",
+      "port": 8082,
+      "ttft_ms": 4072.5,
+      "prompt_n": 3690
+    },
+    {
+      "exp": "E4",
+      "policy": "affinity",
+      "label": "r3 \u00b7 ALPHA",
+      "port": 8082,
+      "ttft_ms": 107.7,
+      "prompt_n": 10
+    }
+  ],
+  "summary": {
+    "E1": {
+      "cold_ttft": 3872.8,
+      "hit_ttft": 70.4,
+      "miss_ttft": 3883.4,
+      "cold_prompt_n": 3694,
+      "hit_prompt_n": 8
+    },
+    "E2": {
+      "rr": {
+        "mean_ttft": 2435.2,
+        "hit_rate": 0.5,
+        "tokens_prefilled": 12007
+      },
+      "affinity": {
+        "mean_ttft": 161.7,
+        "hit_rate": 1.0,
+        "tokens_prefilled": 45
+      }
+    },
+    "E3": {
+      "rr": {
+        "mean_ttft": 5824.5,
+        "hit_rate": 0.0,
+        "tokens_prefilled": 12924
+      },
+      "affinity": {
+        "mean_ttft": 4676.8,
+        "hit_rate": 0.0,
+        "tokens_prefilled": 12924
+      }
+    },
+    "E4": {
+      "seq_ttft": [
+        3932.4,
+        73.0,
+        4072.5,
+        107.7
+      ]
+    }
+  }
+}
