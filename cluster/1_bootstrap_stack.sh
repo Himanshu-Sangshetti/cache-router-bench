@@ -31,11 +31,13 @@ helm list -n ${NAMESPACE} | grep -q ${GUIDE_NAME} || helm install ${GUIDE_NAME} 
   -f ${REPO_ROOT}/guides/${GUIDE_NAME}/router/${GUIDE_NAME}.values.yaml \
   -n ${NAMESPACE} --version ${ROUTER_CHART_VERSION}
 kubectl apply -n ${NAMESPACE} -k ${REPO_ROOT}/guides/${GUIDE_NAME}/modelserver/cpu/vllm/
-# the CPU overlay requests 64 CPU/64Gi per pod (CI-sized) - fit 2 pods on a 16-vCPU box:
-kubectl set resources deploy -n ${NAMESPACE} -l 'llm-d.ai/guide' \
-  --requests=cpu=6,memory=20Gi --limits=cpu=7,memory=26Gi 2>/dev/null || \
-kubectl set resources deploy/precise-prefix-cache-routing-cpu-vllm-decode -n ${NAMESPACE} \
-  --requests=cpu=6,memory=20Gi --limits=cpu=7,memory=26Gi
+# Fit the CI-sized overlay (64 CPU/64Gi per pod!) onto one 16-vCPU box:
+D=deploy/precise-prefix-cache-routing-cpu-vllm-decode
+kubectl scale $D -n ${NAMESPACE} --replicas=0
+kubectl set env $D -n ${NAMESPACE} VLLM_CPU_KVCACHE_SPACE=8       # default wants 32Gi KV
+kubectl set resources $D -n ${NAMESPACE} --requests=cpu=5,memory=18Gi --limits=cpu=6,memory=24Gi
+kubectl set resources deploy/precise-prefix-cache-routing-epp -n ${NAMESPACE} --requests=cpu=1,memory=2Gi
+kubectl scale $D -n ${NAMESPACE} --replicas=2
 echo "waiting for a model server to be Ready (image + weights pull, be patient)..."
 kubectl wait -n ${NAMESPACE} --for=condition=Ready pod \
   -l 'llm-d.ai/guide' --timeout=30m || kubectl get pods -n ${NAMESPACE}
